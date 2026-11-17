@@ -1,0 +1,478 @@
+@charset "UTF-8";
+@import url(header.css);
+@import url(footer.css);
+
+:root {
+    --bg-page: #F9F8F6;
+    --bg-white: #FFFFFF;
+    --bg-sand: #EAE3D5;
+    --bg-soft: #F5F3EF;
+    --green-deep: #1E3A2F;
+    --text-body: #4A5450;
+    --border-light: #E8E3DA;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-page);
+    color: var(--text-body);
+    -webkit-font-smoothing: antialiased;
+}
+
+.guia-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   1. HERO ASSIMÉTRICO (Estilo Imagem 1)
+   ========================================= */
+.secao-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+    margin-bottom: 72px;
+    margin-top: 50px;
+}
+
+.hero-texto h1 {
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: var(--green-deep);
+    line-height: 1.18;
+    margin-bottom: 20px;
+}
+
+.hero-texto p {
+    font-size: 0.98rem;
+    color: var(--text-body);
+    margin-bottom: 14px;
+}
+
+.hero-imagem {
+    background-color: var(--bg-white);
+    border-radius: 24px;
+    height: 330px;
+    overflow: hidden;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.05);
+    border: 1px dashed #D4CEC2;
+}
+
+.hero-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* =========================================
+   2. FAIXA BEGE (Exata da Imagem 1)
+   ========================================= */
+.faixa-bege {
+    background-color: var(--bg-sand);
+    border-radius: 22px;
+    padding: 48px 64px;
+    margin-bottom: 72px;
+    text-align: center;
+}
+
+.faixa-bege h2 {
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: var(--green-deep);
+    margin-bottom: 16px;
+}
+
+.faixa-bege p {
+    max-width: 760px;
+    margin: 0 auto 12px auto;
+    font-size: 0.96rem;
+    color: #3E4743;
+}
+
+.faixa-bege p:last-child {
+    margin-bottom: 0;
+}
+
+/* =========================================
+   3. CARD AMAZÔNIA (Exato da Imagem 2)
+   ========================================= */
+.card-amazonia {
+    background-color: var(--bg-white);
+    border-radius: 24px;
+    padding: 32px;
+    margin-bottom: 80px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.04);
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 40px;
+}
+
+.card-amazonia-foto {
+    background-color: var(--bg-soft);
+    border-radius: 18px;
+    overflow: hidden;
+    min-height: 400px;
+    border: 1px dashed #D4CEC2;
+}
+
+.card-amazonia-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-amazonia-corpo h2 {
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: var(--green-deep);
+    margin-bottom: 10px;
+}
+
+.card-amazonia-corpo .subtitulo {
+    font-size: 0.95rem;
+    margin-bottom: 22px;
+}
+
+.lista-subcards {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.subcard {
+    background-color: var(--bg-soft);
+    border-left: 4px solid var(--green-deep);
+    border-radius: 12px;
+    padding: 14px 20px;
+    margin: 5px;
+}
+
+.subcard strong {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--green-deep);
+    margin-bottom: 2px;
+}
+
+.subcard p {
+    font-size: 0.9rem;
+    color: var(--text-body);
+}
+
+.rodape-nota {
+    font-size: 0.9rem;
+    color: #646E6A;
+}
+
+/* =========================================
+   4. SEÇÃO ASSIMÉTRICA (Título à esquerda + Mini-cards à direita)
+   ========================================= */
+.secao-assimetrica {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 48px;
+    align-items: start;
+    margin-bottom: 80px;
+}
+
+.assimetrica-esquerda h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--green-deep);
+    line-height: 1.25;
+    margin-bottom: 16px;
+}
+
+.assimetrica-esquerda p {
+    font-size: 0.95rem;
+    color: var(--text-body);
+}
+
+.assimetrica-direita-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.mini-card {
+    background-color: var(--bg-white);
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.035);
+    transition: transform 0.25s ease;
+}
+
+.mini-card:hover {
+    transform: translateY(-3px);
+}
+
+.mini-card span {
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--green-deep);
+    background-color: var(--bg-sand);
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+}
+
+.mini-card p {
+    font-size: 0.92rem;
+    color: #353F3B;
+    line-height: 1.55;
+}
+
+/* =========================================
+   5. CARD DIVIDIDO (Texto à esquerda + Foto à direita)
+   ========================================= */
+.card-dividido {
+    background-color: var(--bg-white);
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 80px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.04);
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.dividido-texto h2 {
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: var(--green-deep);
+    margin-bottom: 14px;
+}
+
+.dividido-texto p {
+    font-size: 0.95rem;
+    margin-bottom: 14px;
+}
+
+.label-lista {
+    font-weight: 600;
+    color: var(--green-deep);
+    margin-top: 8px;
+}
+
+.dividido-texto ul {
+    list-style: none;
+    margin: 12px 0 18px 0;
+}
+
+.dividido-texto ul li {
+    position: relative;
+    padding-left: 18px;
+    font-size: 0.93rem;
+    margin-bottom: 8px;
+}
+
+.dividido-texto ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--green-deep);
+}
+
+.alerta-texto {
+    background-color: var(--bg-soft);
+    border-left: 4px solid var(--green-deep);
+    padding: 14px 18px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+.dividido-foto {
+    background-color: var(--bg-soft);
+    border-radius: 18px;
+    height: 360px;
+    overflow: hidden;
+    border: 1px dashed #D4CEC2;
+}
+
+.dividido-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* =========================================
+   6. DUAS COLUNAS EDITORIAIS LIMPAS
+   ========================================= */
+.secao-editorial-dupla {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    margin-bottom: 72px;
+    padding: 0 12px;
+}
+
+.coluna-editorial h2 {
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: var(--green-deep);
+    line-height: 1.3;
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.coluna-editorial p {
+    font-size: 0.95rem;
+    color: var(--text-body);
+    line-height: 1.75;
+    margin-bottom: 14px;
+}
+
+.coluna-editorial p:last-child {
+    margin-bottom: 0;
+}
+
+/* =========================================
+   7. AVISO FINAL
+   ========================================= */
+.aviso-final {
+    margin-bottom: 50px;
+}
+
+.aviso-final strong {
+    color: var(--green-deep);
+}
+
+/* =========================================
+   8. RESPONSIVIDADE (MEDIA QUERIES)
+   ========================================= */
+
+/* Telas Médias e Tablets (até 1140px) */
+@media (max-width: 1140px) {
+    .guia-container {
+        padding: 0 24px;
+    }
+}
+
+/* Tablets (até 920px) */
+@media (max-width: 920px) {
+    .secao-hero,
+    .card-amazonia,
+    .secao-assimetrica,
+    .card-dividido,
+    .secao-editorial-dupla {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        margin-bottom: 56px;
+    }
+
+    .secao-hero {
+        margin-top: 36px;
+    }
+
+    .hero-texto h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-imagem {
+        height: 280px;
+    }
+
+    .faixa-bege {
+        padding: 36px 32px;
+        margin-bottom: 56px;
+    }
+
+    .card-amazonia-foto,
+    .dividido-foto {
+        min-height: 260px;
+        height: 260px;
+    }
+
+    /* Em telas médias, a foto do card dividido sobe para o topo */
+    .dividido-foto {
+        order: -1;
+    }
+}
+
+/* Celulares e Telas Pequenas (até 600px) */
+@media (max-width: 600px) {
+    .guia-container {
+        padding: 0 16px;
+    }
+
+    .secao-hero {
+        margin-top: 28px;
+        margin-bottom: 44px;
+        gap: 24px;
+    }
+
+    .hero-texto h1 {
+        font-size: 1.85rem;
+    }
+
+    .hero-imagem {
+        height: 220px;
+        border-radius: 18px;
+    }
+
+    .faixa-bege {
+        padding: 28px 20px;
+        border-radius: 18px;
+        margin-bottom: 44px;
+    }
+
+    .faixa-bege h2 {
+        font-size: 1.4rem;
+    }
+
+    .card-amazonia,
+    .card-dividido {
+        padding: 22px;
+        border-radius: 18px;
+        margin-bottom: 48px;
+        gap: 24px;
+    }
+
+    .card-amazonia-corpo h2,
+    .dividido-texto h2,
+    .assimetrica-esquerda h2 {
+        font-size: 1.45rem;
+    }
+
+    .assimetrica-direita-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .mini-card {
+        padding: 20px;
+    }
+
+    .secao-editorial-dupla {
+        padding: 0;
+        gap: 36px;
+        margin-bottom: 48px;
+    }
+
+    .coluna-editorial h2 {
+        font-size: 1.35rem;
+    }
+
+    .aviso-final {
+        margin-bottom: 36px;
+    }
+}

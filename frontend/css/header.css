@@ -1,0 +1,206 @@
+/* ========================================================
+   🌿 HEADER (BARRA DE NAVEGAÇÃO SUPERIOR)
+   ======================================================== */
+:root {
+    --fundo: #F5F5F5;
+    --verde-escuro: #173B32;
+    --bege: #E8DCC8;
+    --verde: #30614D;
+    --creme-suave: #F9F8F3;
+    --branco: #FFFFFF;
+    --texto-escuro: #444444;
+    --texto-mutado: #666666;
+    --borda-sutil: rgba(0, 0, 0, 0.04);
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 4%;
+    background-color: var(--creme-suave);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+    object-fit: contain;
+}
+
+.marca-texto h1 {
+    color: var(--verde-escuro);
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.marca-texto p {
+    color: var(--verde);
+    font-size: 13px;
+    text-transform: lowercase;
+    margin-top: 2px;
+    letter-spacing: 0.5px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-menu a {
+    color: var(--verde-escuro);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    position: relative;
+    padding: 6px 0;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--verde);
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--verde);
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+}
+
+.icone-busca {
+    color: var(--verde-escuro);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.icone-busca:hover {
+    background-color: rgba(212, 199, 176, 0.3);
+    color: var(--verde);
+    transform: scale(1.05);
+}
+
+/* Esconde os ícones no Desktop por padrão */
+.nav-menu .nav-icon {
+    display: none;
+}
+
+/* ========================================================
+   🌿 RESPONSIVIDADE DO HEADER (MEDIA QUERIES)
+   ======================================================== */
+
+/* Tablets e Telas Médias (até 920px) */
+@media (max-width: 920px) {
+    .main-header {
+        padding: 16px 3%;
+    }
+
+    .marca {
+        gap: 10px;
+    }
+
+    .logo {
+        width: 42px;
+    }
+
+    .marca-texto h1 {
+        font-size: 19px;
+    }
+
+    .marca-texto p {
+        font-size: 12px;
+    }
+
+    .nav-menu {
+        gap: 20px;
+    }
+
+    .nav-menu a {
+        font-size: 14px;
+    }
+}
+
+/* Celulares e Telas Pequenas (até 680px) */
+@media (max-width: 680px) {
+    .main-header {
+        flex-wrap: wrap;
+        padding: 14px 20px;
+        gap: 12px;
+    }
+
+    .marca {
+        order: 1;
+    }
+
+    .header-actions {
+        order: 2;
+    }
+
+    .nav-menu {
+        order: 3;
+        width: 100%;
+        justify-content: space-around;
+        gap: 8px;
+        padding-top: 12px;
+        border-top: 1px solid var(--borda-sutil);
+    }
+
+    /* Esconde os textos no mobile */
+    .nav-text {
+        display: none;
+    }
+
+    /* Mostra os ícones do Google Material Symbols */
+    .nav-menu .nav-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 19px;
+        padding: 8px;
+        border-radius: 50%;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .nav-menu a {
+        padding: 0;
+    }
+
+    /* Remove a linha animada de baixo no mobile e usa destaque circular */
+    .nav-menu a::after {
+        display: none;
+    }
+
+    .nav-menu a:hover .nav-icon,
+    .nav-menu a:active .nav-icon {
+        background-color: rgba(212, 199, 176, 0.35);
+        color: var(--verde);
+    }
+
+    .icone-busca {
+        font-size: 22px;
+        padding: 6px;
+    }
+}

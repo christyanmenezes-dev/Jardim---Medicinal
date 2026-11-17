@@ -1,0 +1,351 @@
+@charset "UTF-8";
+@import url(header.css);
+@import url(footer.css);
+
+:root {
+    --bg-page: #F7F5F0;
+    --bg-sand: #DDD5C7;
+    --bg-card: #FFFFFF;
+    --bg-bento: #F8F6F1;
+    --green-deep: #1A362D;
+    --green-mid: #284B40;
+    --green-soft: #E6ECE9;
+    --text-dark: #1F2824;
+    --text-muted: #56615C;
+    --border-sand: #E2DBD0;
+    --terracotta: #8C4A32;
+    --terracotta-bg: #FAF3F0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    background-color: var(--bg-page);
+    color: var(--text-dark);
+}
+
+main {
+    max-width: 1160px;
+    margin: 0 auto;
+}
+
+/*hero*/
+/*hero*/
+.text {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 56px auto;
+}
+
+.text h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1A362D;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+}
+
+.text p {
+    font-size: 1rem;
+    color: #56615C;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   1. CABEÇALHO SIMPLES (Padrão das outras páginas)
+   ========================================= */
+.text {
+    text-align: center;
+    max-width: 720px;
+    margin: 50px auto 48px auto;
+}
+
+.text h1 {
+    font-size: 2.3rem;
+    color: var(--green-deep);
+    margin-bottom: 12px;
+}
+
+.text p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+/* =========================================
+   2. CARD PRINCIPAL DE CADA PLANTA
+   ========================================= */
+.plants {
+    background-color: var(--bg-card);
+    border-radius: 26px;
+    border: 1px solid var(--border-sand);
+    margin-bottom: 52px;
+    overflow: hidden;
+    box-shadow: 0 18px 45px rgba(26, 54, 45, 0.06);
+
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    grid-template-rows: auto 1fr;
+}
+
+/* Faixa de título em verde-musgo escuro no topo do card */
+.plants > h2 {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    background: linear-gradient(90deg, var(--green-deep) 0%, var(--green-mid) 100%);
+    color: #F7F5F0;
+    font-size: 1.38rem;
+    font-weight: 600;
+    line-height: 1.5;
+    padding: 26px 38px;
+    letter-spacing: 0.01em;
+}
+
+/* =========================================
+   3. COLUNA ESQUERDA: GALERIA DE FOTOS
+   ========================================= */
+.plants > .img {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    background-color: #F3EFE7;
+    padding: 32px;
+    border-right: 1px solid var(--border-sand);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+}
+
+.plants > .img img {
+    width: 100%;
+    height: 235px;
+    object-fit: cover;
+    border-radius: 18px;
+    border: 4px solid #FFFFFF;
+    box-shadow: 0 10px 24px rgba(26, 54, 45, 0.1);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.plants > .img img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 14px 30px rgba(26, 54, 45, 0.16);
+}
+
+/* =========================================
+   4. COLUNA DIREITA: GRADE BENTO DE INFORMAÇÕES
+   ========================================= */
+.plants > .info {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    padding: 32px 36px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-content: stretch;
+}
+
+.origin,
+.characteristic,
+.use,
+.risks {
+    background-color: var(--bg-bento);
+    border: 1px solid var(--border-sand);
+    border-radius: 18px;
+    padding: 22px 24px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.origin:hover,
+.characteristic:hover,
+.use:hover {
+    transform: translateY(-3px);
+    border-color: #C7BEB0;
+    box-shadow: 0 10px 24px rgba(26, 54, 45, 0.05);
+}
+
+/* Destaque visual refinado para Riscos */
+.risks {
+    background-color: var(--terracotta-bg);
+    border-color: #E8D5CE;
+}
+
+.risks:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(140, 74, 50, 0.07);
+}
+
+/* Títulos das subseções com ícones integrados */
+.info h2 {
+    font-size: 1.12rem;
+    font-weight: 700;
+    color: var(--green-deep);
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(26, 54, 45, 0.1);
+}
+
+/* Listas dentro dos cards */
+.info ul {
+    list-style: none;
+}
+
+.info ul li {
+    position: relative;
+    padding-left: 16px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 9px;
+    line-height: 1.55;
+}
+
+.info ul li:last-child {
+    margin-bottom: 0;
+}
+
+.info ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--green-mid);
+}
+
+.risks ul li {
+    color: #5E4339;
+}
+
+.risks ul li::before {
+    background-color: var(--terracotta);
+}
+
+/* =========================================
+   5. RESPONSIVIDADE (MEDIA QUERIES)
+   ========================================= */
+
+/* Telas Médias (até 1200px) */
+@media (max-width: 1200px) {
+    main {
+        padding: 0 24px;
+    }
+}
+
+/* Tablets (até 960px) */
+@media (max-width: 960px) {
+    .text {
+        margin: 40px auto 36px auto;
+        padding: 0 16px;
+    }
+
+    .text h1 {
+        font-size: 2rem;
+    }
+
+    /* Empilha a galeria e as informações em uma coluna */
+    .plants {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        margin-bottom: 40px;
+    }
+
+    .plants > h2 {
+        padding: 22px 28px;
+        font-size: 1.25rem;
+    }
+
+    /* Fotos ficam lado a lado no tablet */
+    .plants > .img {
+        grid-column: 1;
+        grid-row: 2;
+        flex-direction: row;
+        border-right: none;
+        border-bottom: 1px solid var(--border-sand);
+        padding: 24px;
+    }
+
+    .plants > .img img {
+        width: 50%;
+        height: 220px;
+    }
+
+    .plants > .info {
+        grid-column: 1;
+        grid-row: 3;
+        padding: 28px;
+    }
+}
+
+/* Celulares e Telas Pequenas (até 600px) */
+@media (max-width: 600px) {
+    main {
+        padding: 0 16px;
+    }
+
+    .text {
+        margin: 32px auto 28px auto;
+    }
+
+    .text h1 {
+        font-size: 1.75rem;
+    }
+
+    .plants {
+        border-radius: 20px;
+        margin-bottom: 40px;
+    }
+
+    .plants > h2 {
+        padding: 18px 20px;
+        font-size: 1.12rem;
+    }
+
+    /* Fotos voltam a ficar uma abaixo da outra no celular */
+    .plants > .img {
+        flex-direction: column;
+        padding: 20px;
+        gap: 14px;
+    }
+
+    .plants > .img img {
+        width: 100%;
+        height: 200px;
+        border-radius: 14px;
+    }
+
+    /* Grade interna de informações vira 1 coluna */
+    .plants > .info {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        gap: 14px;
+    }
+
+    .origin,
+    .characteristic,
+    .use,
+    .risks {
+        padding: 18px 20px;
+        border-radius: 14px;
+        align-items: flex-start;
+    }
+
+    .info h2 {
+        width: 100%;
+        font-size: 1.05rem;
+    }
+}

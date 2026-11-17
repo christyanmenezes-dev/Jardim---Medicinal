@@ -1,0 +1,513 @@
+@charset "UTF-8";
+@import url("footer.css");
+@import url("header.css");
+
+/* ========================================================
+   🌿 SEÇÃO DE PERGUNTAS FREQUENTES
+   ======================================================== */
+
+:root {
+    --fundo: #F5F5F5;
+    --verde-escuro: #173B32;
+    --bege: #E8DCC8;
+    --verde: #30614D;
+    --creme-suave: #F9F8F3;
+    --branco: #FFFFFF;
+    --texto-escuro: #444444;
+    --texto-mutado: #666666;
+    --borda-sutil: rgba(0, 0, 0, 0.04);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.section {
+    background-color: var(--creme-suave);
+    padding: 80px 4%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.header {
+    text-align: center;
+    max-width: 600px;
+    margin-bottom: 50px;
+}
+
+.subtitle {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--verde);
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.header h2 {
+    color: var(--verde-escuro);
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.header p {
+    color: var(--texto-mutado);
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Container de Distribuição em Duas Colunas */
+.layout-container {
+    display: flex;
+    gap: 50px;
+    max-width: 1200px;
+    width: 100%;
+    align-items: flex-start;
+}
+
+/* Subtítulos das Colunas Internas */
+.forum-area h3,
+.form-area h3 {
+    color: var(--verde-escuro);
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+}
+
+/* --- COLUNA ESQUERDA: LISTA E VISUALIZAÇÃO DOS CARDS --- */
+.forum-area {
+    flex: 1.3; /* Dá um pouco mais de espaço para ler as perguntas */
+}
+
+.card {
+    background-color: var(--branco);
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0, 0, 0, 0.01);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.card + .card {
+    margin-top: 15px; /* Cria um distanciamento elegante entre as respostas subsequentes */
+}
+
+.card-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Iniciais do usuário simulando um avatar sutil */
+#user-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #EAE6DC;
+
+    margin-bottom: px;
+}
+
+.card-user h4 {
+    color: var(--verde-escuro);
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.question-text {
+    color: var(--texto-escuro);
+    font-size: 15px;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+/* Bloco de Resposta Interno do Card */
+.respostas {
+    background-color: var(--fundo);
+    border-left: 3px solid var(--verde);
+    border-radius: 0 16px 16px 0;
+    padding: 16px 20px;
+    margin-top: 8px;
+    margin-bottom: 10px;
+}
+
+.reply-header {
+    margin-bottom: 6px;
+}
+
+.reply-badge {
+    background-color: rgba(48, 97, 77, 0.1);
+    color: var(--verde);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 3px 8px;
+    border-radius: 6px;
+}
+
+.respostas p {
+    color: var(--texto-mutado);
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Botão interativo para responder */
+.card-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 4px;
+}
+
+.container-response {
+    width: 100%;
+    margin-top: 18px;
+}
+
+.btn-action-reply {
+    background: transparent;
+    border: none;
+    color: var(--verde);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.btn-action-reply:hover {
+    color: var(--verde-escuro);
+}
+
+/* --- ESPAÇAMENTO ENTRE AS RESPOSTAS --- */
+
+.lista-respostas {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    margin-top: 16px;
+}
+
+.resposta-item {
+    padding: 12px 14px;
+    background-color: var(--branco);
+    border-radius: 12px;
+    border: 1px solid var(--borda-sutil);
+}
+
+.resposta-item strong {
+    display: block;
+    color: var(--verde-escuro);
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+.resposta-item p {
+    color: var(--texto-mutado);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* --- FORMULÁRIO DE AJUDAR A RESPONDER --- */
+
+.container-response {
+    width: 100%;
+    margin-top: 18px;
+    padding: 20px;
+    background-color: var(--creme-suave);
+    border: 1px solid rgba(23, 59, 50, 0.10);
+    border-radius: 16px;
+}
+
+.form-response {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-response div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-response label {
+    color: var(--verde-escuro);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form-response input,
+.form-response textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid rgba(23, 59, 50, 0.15);
+    border-radius: 12px;
+    background-color: var(--branco);
+    color: var(--texto-escuro);
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-response input:focus,
+.form-response textarea:focus {
+    border-color: var(--verde);
+    box-shadow: 0 0 0 3px rgba(48, 97, 77, 0.08);
+}
+
+.form-response textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.btn-response {
+    align-self: flex-end;
+    padding: 12px 20px;
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+    border: none;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-response:hover {
+    background-color: var(--verde);
+}
+
+.btn-response:active {
+    transform: scale(0.98);
+}
+
+.btn-response:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.mensagem-response {
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* --- COLUNA DIREITA: FORMULÁRIO DE ENVIO --- */
+.form-area {
+    flex: 1;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form label {
+    color: var(--verde-escuro);
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form input[type="text"],
+.form textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid rgba(23, 59, 50, 0.15);
+    border-radius: 16px;
+    background-color: transparent;
+    color: var(--texto-escuro);
+    font-size: 14px;
+    outline: none;
+    font-family: inherit;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form input[type="text"]:focus,
+.form textarea:focus {
+    border-color: var(--verde);
+    box-shadow: 0 0 0 3px rgba(48, 97, 77, 0.08);
+}
+
+.form textarea {
+    resize: vertical;
+    min-height: 130px;
+}
+
+/* Botão de Envio de Perguntas */
+.btn-submit {
+    width: 100%;
+    padding: 16px;
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+    border: none;
+    border-radius: 16px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(23, 59, 50, 0.12);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-submit:hover {
+    background-color: var(--verde);
+}
+
+.btn-submit:active {
+    transform: scale(0.98);
+}
+
+/* ========================================================
+   🌿 RESPONSIVIDADE (MEDIA QUERIES - FAQ / FÓRUM)
+   ======================================================== */
+
+/* Tablets e Telas Médias (até 960px) */
+@media (max-width: 960px) {
+    .section {
+        padding: 64px 5%;
+    }
+
+    .header {
+        margin-bottom: 40px;
+    }
+
+    .header h2 {
+        font-size: 28px;
+    }
+
+    /* Empilha as colunas: formulário de nova pergunta no topo ou abaixo */
+    .layout-container {
+        flex-direction: column;
+        gap: 48px;
+    }
+
+    .forum-area,
+    .form-area {
+        width: 100%;
+        flex: none;
+    }
+
+    /* Coloca o formulário de enviar dúvida antes da lista no tablet/mobile */
+    .form-area {
+        order: -1;
+        background-color: var(--branco);
+        padding: 28px;
+        border-radius: 22px;
+        border: 1px solid var(--borda-sutil);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+    }
+}
+
+/* Celulares e Telas Pequenas (até 600px) */
+@media (max-width: 600px) {
+    .section {
+        padding: 48px 16px;
+    }
+
+    .header {
+        margin-bottom: 32px;
+    }
+
+    .header h2 {
+        font-size: 24px;
+    }
+
+    .header p {
+        font-size: 14.5px;
+    }
+
+    .forum-area h3,
+    .form-area h3 {
+        font-size: 16px;
+        margin-bottom: 18px;
+    }
+
+    .form-area {
+        padding: 22px 18px;
+        border-radius: 18px;
+    }
+
+    .card {
+        padding: 22px 18px;
+        border-radius: 18px;
+        gap: 14px;
+    }
+
+    #user-avatar {
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+    }
+
+    .card-user h4 {
+        font-size: 14px;
+    }
+
+    .question-text {
+        font-size: 14px;
+    }
+
+    .respostas {
+        padding: 14px 16px;
+        border-radius: 0 12px 12px 0;
+    }
+
+    .resposta-item {
+        padding: 10px 12px;
+    }
+
+    .container-response {
+        padding: 16px;
+    }
+
+    /* Botão de enviar resposta ocupa toda a largura no celular */
+    .btn-response {
+        width: 100%;
+        align-self: stretch;
+        padding: 14px;
+    }
+
+    .btn-submit {
+        padding: 15px;
+    }
+}

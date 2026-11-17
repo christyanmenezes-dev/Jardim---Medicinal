@@ -1,0 +1,231 @@
+/* ========================================================
+   🌿 SITE FOOTER (RODAPÉ INTEGRADO À MARCA)
+   ======================================================== */
+@charset "UTF-8";
+
+:root {
+    --fundo: #F5F5F5;
+    --verde-escuro: #173B32;
+    --bege: #E8DCC8;
+    --verde: #30614D;
+    --creme-suave: #F9F8F3;
+    --branco: #FFFFFF;
+    --texto-escuro: #444444;
+    --texto-mutado: #666666;
+    --borda-sutil: rgba(0, 0, 0, 0.04);
+}
+
+.site-footer {
+    background-color: #F4F1EA;
+    color: #555555;
+    padding: 70px 0 24px 0;
+    font-size: 14px;
+    line-height: 1.6;
+    border-top: 1px solid var(--borda-sutil);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+}
+
+.brand-column {
+    flex: 1.5;
+    max-width: 380px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.footer-logo img {
+    width: 36px;
+    height: auto;
+}
+
+.footer-logo h3 {
+    color: var(--verde-escuro);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.brand-column p {
+    color: var(--texto-mutado);
+    margin-bottom: 20px;
+    font-size: 13.5px;
+}
+
+.footer-column h4 {
+    color: var(--verde-escuro);
+    font-size: 15px;
+    margin-bottom: 22px;
+    font-weight: 600;
+}
+
+.footer-column ul li {
+    margin-bottom: 12px;
+    list-style: none;
+}
+
+.footer-column ul li a {
+    color: #555555;
+    text-decoration: none;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: var(--verde);
+    padding-left: 4px;
+}
+
+.social-links {
+    display: flex;
+    gap: 12px;
+}
+
+.social-links a {
+    color: var(--verde-escuro);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: rgba(212, 199, 176, 0.3);
+    border-radius: 50%;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: var(--verde);
+    color: var(--branco);
+    transform: translateY(-2px);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    margin-top: 60px;
+    padding-top: 24px;
+}
+
+.footer-bottom-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    color: #777777;
+    font-size: 13px;
+}
+.legal-links {
+    display: flex;
+    gap: 24px;
+}
+.legal-links a {
+    color: #777777;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.legal-links a:hover {
+    color: var(--verde-escuro);
+}
+
+/* ========================================================
+   🌿 RESPONSIVIDADE DO RODAPÉ (MEDIA QUERIES)
+   ======================================================== */
+
+/* Tablets e Telas Médias (até 920px) */
+@media (max-width: 920px) {
+    .footer-container {
+        flex-wrap: wrap;
+        padding: 0 28px;
+        gap: 36px;
+    }
+
+    /* A coluna da marca ocupa toda a largura no topo do rodapé */
+    .brand-column {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .footer-column {
+        flex: 1 1 calc(33.333% - 36px);
+        min-width: 160px;
+    }
+
+    .footer-bottom-content {
+        padding: 0 28px;
+    }
+}
+
+/* Celulares e Telas Pequenas (até 640px) */
+@media (max-width: 640px) {
+    .site-footer {
+        padding: 48px 0 24px 0;
+        text-align: center;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 20px;
+        gap: 32px;
+    }
+
+    .footer-column {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    .footer-logo {
+        justify-content: center;
+    }
+
+    .brand-column p {
+        max-width: 340px;
+        margin: 0 auto 20px auto;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .footer-column h4 {
+        margin-bottom: 14px;
+    }
+
+    /* Remove o deslocamento lateral no hover em telas de toque */
+    .footer-column ul li a:hover {
+        padding-left: 0;
+    }
+
+    .footer-bottom {
+        margin-top: 40px;
+    }
+
+    .footer-bottom-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 0 20px;
+        gap: 12px;
+    }
+
+    .legal-links {
+        flex-direction: column;
+        gap: 8px;
+    }
+}

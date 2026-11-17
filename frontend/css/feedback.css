@@ -1,0 +1,388 @@
+@charset "UTF-8";
+@import url("footer.css");
+@import url("header.css");
+
+/* ========================================================
+   🌿 CONFIGURAÇÕES GERAIS E VARIÁVEIS
+   ======================================================== */
+:root {
+    --fundo: #F5F5F5;
+    --verde-escuro: #173B32;
+    --bege: #E8DCC8;
+    --verde: #30614D;
+    --creme-suave: #F9F8F3;
+    --branco: #FFFFFF;
+    --texto-escuro: #444444;
+    --texto-mutado: #666666;
+    --borda-sutil: rgba(0, 0, 0, 0.04);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--fundo);
+}
+
+/* ========================================================
+   🌿 SEÇÃO DE FEEDBACKS & CONTAINER
+   ======================================================== */
+.feedback-section {
+    background-color: var(--creme-suave);
+    padding: 80px 4%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.feedback-header {
+    text-align: center;
+    max-width: 600px;
+    margin-bottom: 50px;
+}
+
+.feedback-subtitle {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--verde);
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.feedback-header h2 {
+    color: var(--verde-escuro);
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.feedback-header p {
+    color: var(--texto-mutado);
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Grid de Depoimentos: Limita a 3 por linha e joga o resto para baixo */
+.feedback-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.feedback-card {
+    background-color: var(--branco);
+    border-radius: 24px;
+    padding: 35px 30px;
+    flex: 1 1 calc(33.333% - 24px);
+    min-width: 280px;
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.01);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
+}
+
+.feedback-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+}
+
+/* Estrelas do Card Centralizadas no Topo */
+.feedback-stars {
+    display: flex;
+    justify-content: center; /* Move do canto esquerdo para o CENTRO */
+    gap: 4px;
+    margin-bottom: 16px;
+}
+
+.star-icon {
+    color: #D4C7B0;
+    font-size: 20px;
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.feedback-text {
+    color: var(--texto-escuro);
+    font-size: 15px;
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 24px;
+    text-align: center; /* Centraliza o texto do feedback para combinar com o topo */
+    flex-grow: 1;
+}
+
+.feedback-user {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Alinha o avatar e nome ao centro */
+    gap: 14px;
+    border-top: 1px solid var(--borda-sutil);
+    padding-top: 16px;
+}
+
+.user-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #EAE6DC;
+}
+
+.user-info h4 {
+    color: var(--verde-escuro);
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.user-info p {
+    color: #888888;
+    font-size: 12.5px;
+}
+
+/* ========================================================
+   🌿 ESTILIZAÇÃO DO FORMULÁRIO (CORREÇÃO DE ALINHAMENTO)
+   ======================================================== */
+
+/* Container principal do formulário */
+.feedback-section form {
+    max-width: 480px;
+    width: 100%;
+    margin: 40px auto 30px auto;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Força as DIVs que envelopam os campos a ocuparem 100% da largura */
+.feedback-section form > div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Alinhamento dos rótulos de texto (Nome, Avaliação, etc.) */
+.feedback-section form label[for="nome"],
+.feedback-section form label[for="avaliacao"] {
+    color: var(--verde-escuro);
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+    align-self: flex-start; /* Alinha o texto estritamente à esquerda */
+}
+
+/* Inputs de Texto e Textarea expandidos corretamente */
+.feedback-section form input[type="text"],
+.feedback-section form textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid rgba(23, 59, 50, 0.15);
+    border-radius: 16px;
+    background-color: transparent;
+    color: var(--texto-escuro);
+    font-size: 14px;
+    outline: none;
+    font-family: inherit;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feedback-section form input[type="text"]:focus,
+.feedback-section form textarea:focus {
+    border-color: var(--verde);
+    box-shadow: 0 0 0 3px rgba(48, 97, 77, 0.08);
+}
+
+.feedback-section form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* ========================================================
+   🌿 BLOCO DE ESTRELAS
+   ======================================================== */
+.avaliacao-estrelas {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 12px;
+}
+
+.rating input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+}
+
+/* Estilização exclusiva do caractere estrela */
+.rating label {
+    font-size: 38px !important;
+    color: #DDD4C5 !important;
+    cursor: pointer;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    margin: 0 !important;
+    padding: 0 4px;
+    line-height: 1;
+    display: inline-block;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.rating label:hover {
+    transform: scale(1.15);
+}
+
+.rating input[type="radio"]:checked ~ label,
+.rating label:hover,
+.rating label:hover ~ label {
+    color: #E5A52B !important;
+}
+
+/* ========================================================
+   🌿 BOTÕES DO FORMULÁRIO (ENVIAR, EDITAR, DELETAR)
+   ======================================================== */
+
+/* Centraliza e organiza a div que contém o botão principal e os secundários */
+.feedback-section form > div:has(#botao) {
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+
+/* Botão Principal: Enviar Feedback */
+#botao {
+    width: 80%;
+    padding: 12px;
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+    border: none;
+    border-radius: 16px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(23, 59, 50, 0.12);
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+#botao:hover {
+    background-color: var(--verde);
+    box-shadow: 0 6px 18px rgba(48, 97, 77, 0.2);
+}
+
+/* Parágrafo de Mensagem de feedback do sistema */
+#mensagem-feedback {
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* ========================================================
+   🌿 RESPONSIVIDADE (MEDIA QUERIES)
+   ======================================================== */
+
+/* Tablets e Telas Médias (até 992px) */
+@media (max-width: 992px) {
+    .feedback-section {
+        padding: 64px 5%;
+    }
+
+    .feedback-header h2 {
+        font-size: 28px;
+    }
+
+    /* Ajusta os cards para 2 por linha no tablet */
+    .feedback-card {
+        flex: 1 1 calc(50% - 24px);
+        max-width: 440px;
+    }
+}
+
+/* Celulares e Telas Pequenas (até 640px) */
+@media (max-width: 640px) {
+    .feedback-section {
+        padding: 48px 16px;
+    }
+
+    .feedback-header {
+        margin-bottom: 36px;
+    }
+
+    .feedback-header h2 {
+        font-size: 24px;
+    }
+
+    .feedback-header p {
+        font-size: 14.5px;
+    }
+
+    /* Cards ocupam a largura total da tela */
+    .feedback-container {
+        gap: 18px;
+    }
+
+    .feedback-card {
+        flex: 1 1 100%;
+        min-width: 100%;
+        max-width: 100%;
+        padding: 26px 20px;
+        border-radius: 20px;
+    }
+
+    .feedback-text {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    /* Ajustes do Formulário no Mobile */
+    .feedback-section form {
+        margin: 30px auto 20px auto;
+        padding: 10px 4px;
+        gap: 16px;
+    }
+
+    .rating {
+        gap: 8px;
+    }
+
+    .rating label {
+        font-size: 32px !important;
+    }
+
+    #botao {
+        width: 100%;
+        padding: 14px;
+    }
+}

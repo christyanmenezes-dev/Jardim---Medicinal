@@ -1,0 +1,755 @@
+@charset "UTF-8";
+@import url("footer.css");
+@import url("header.css");
+
+:root {
+    --fundo: #F5F5F5;
+    --verde-escuro: #173B32;
+    --bege: #E8DCC8;
+    --verde: #30614D;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+/* ========================================================
+   🌿 HERO SECTION (ÁREA PRINCIPAL DO TOPO)
+   ======================================================== */
+
+.hero-section {
+    padding: 20px 4%;
+}
+
+.hero-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    background-color: #DAD2C5; /* Cor sólida baseada no seu código original */
+    padding: 60px 8%;
+    border-radius: 30px; /* Bordas de 30px conversam melhor com a suavidade da marca */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    max-width: 480px; 
+    color: var(--verde-escuro);
+}
+
+.hero-subtitle {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    font-weight: 700;
+}
+
+.hero-desc {
+    font-size: 16px;
+    line-height: 1.6;
+    opacity: 0.9;
+    margin-bottom: 24px;
+}
+
+/* Botão de Chamada para Ação (CTA) */
+.hero-text a {
+    background-color: var(--verde-escuro);
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 24px;
+    font-weight: 500;
+    align-self: flex-start; /* Impede o botão de esticar na largura total do bloco de texto */
+    transition: background-color 0.3s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hero-text a:hover {
+    background-color: var(--verde);
+    transform: translateY(-2px) scale(1.02);
+}
+
+/* Container do Formato Orgânico de Folhas/Vidros */
+.img-hero {
+    background-color: var(--bege);
+    width: 500px;
+    height: 400px;
+    border-radius: 60% 40% 55% 45% / 45% 55% 45% 55%;
+    overflow: hidden; /* Garante que a imagem respeite a curvatura orgânica do background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz a imagem assentar harmonicamente na moldura */
+}
+
+/* ========================================================
+   ✨ BARRA DE BENEFÍCIOS (EMBAIXO DO HERO)
+   ======================================================== */
+
+.beneficios-bar {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    background-color: rgba(212, 199, 176, 0.2); /* Equivalente ao #d4c7b033 */
+    border-radius: 24px;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 10px;
+    gap: 10px;
+}
+
+.content-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 24px 15px;
+    text-align: center;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* Efeito Hover Inteligente no Bloco inteiro */
+.content-item:hover {
+    background-color: #FFFFFF;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.04);
+}
+
+/* Ícones dos Benefícios */
+.beneficios-bar span {
+    background-color: rgba(212, 199, 176, 0.6); /* Equivalente ao #d4c7b0a8 */
+    color: var(--verde-escuro);
+    border-radius: 50%;
+    padding: 10px;
+    margin-bottom: 14px;
+    font-size: 24px;
+    transition: background-color 0.3s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.3s ease;
+}
+
+.content-item:hover span {
+    background-color: var(--verde);
+    color: #FFFFFF;
+    transform: translateY(-3px) rotate(8deg);
+}
+
+/* Estilização de Títulos e Descrições Internas */
+.content-item h3 {
+    color: var(--verde-escuro);
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    transition: color 0.3s ease;
+}
+
+.content-item p {
+    color: var(--verde);
+    font-size: 13px;
+    opacity: 0.85;
+}
+
+.content-item:hover h3 {
+    color: var(--verde);
+}
+
+/* Container Geral da Seção */
+#intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 40px;
+    gap: 40px;
+}
+
+/* Bloco de Texto Institucional (Esquerda) */
+#card1 {
+    flex: 1; /* Ocupa o espaço proporcionalmente */
+    max-width: 400px;
+}
+
+#card1 h2 {
+    font-size: 36px;
+    color: var(--verde-escuro);
+    margin-bottom: 20px;
+    text-align: left; /* Alinhamento à esquerda gera maior sofisticação em textos longos */
+    line-height: 1.2;
+}
+
+#card1 p {
+    font-size: 16px;
+    color: #555555; /* Um cinza-escuro melhora a legibilidade do parágrafo */
+    line-height: 1.6;
+    text-align: left;
+}
+
+/* Container que segura os dois cards de produtos */
+.produtos-intro-container {
+    display: flex;
+    flex: 2;
+    gap: 24px;
+    justify-content: flex-end;
+}
+
+/* O Card de Produto Individual */
+.img-card1 {
+    background-color: #FFFFFF; /* Fundo branco para criar separação física */
+    border-radius: 24px; /* Casando com as curvas orgânicas do seu site */
+    padding: 30px 24px;
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03); /* Sombra extremamente sutil */
+    border: 1px solid rgba(0, 0, 0, 0.01);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.img-card1:hover {
+    transform: translateY(-5px); /* Efeito flutuante elegante ao passar o mouse */
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+}
+
+/* Proteção e centralização da imagem */
+.img-wrapper {
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.img-card1 img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.img-card1 h2 {
+    color: var(--verde-escuro);
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.img-card1 p {
+    color: #666666;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: auto; /* Empurra o botão "Saiba mais" sempre para o rodapé do card */
+    min-height: 42px; /* Garante que os botões fiquem alinhados mesmo se um texto for maior */
+}
+
+/* Botão de Ação do Card */
+.img-card1 a {
+    background-color: var(--verde-escuro);
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 10px 28px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.img-card1 a:hover {
+    background-color: var(--verde);
+    transform: scale(1.03);
+}
+
+
+/* Wrapper externo para controle de margem na página */
+.card2-container {
+    padding: 0 10%;
+    margin: 50px 0;
+}
+
+#card2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #EAE6DC; /* Um tom areia sólido e suave, puxando a opacidade que você usou de forma mais limpa */
+    cursor: pointer;
+    border-radius: 30px; /* Casando com o raio de 30px do banner principal */
+    overflow: hidden;
+    position: relative;
+    padding: 30px 40px;
+    transition: background-color 0.4s ease, transform 0.4s ease;
+}
+
+/* Container do Texto */
+.card2-text {
+    flex: 1;
+    text-align: left;
+    padding: 0 40px;
+    transition: transform 0.4s ease;
+}
+
+.card2-text h2 {
+    color: var(--verde-escuro);
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    transition: color 0.4s ease;
+}
+
+.card2-text p {
+    color: #555555; /* Um cinza-escuro/grafite melhora muito a leitura comparado ao verde puro no fundo areia */
+    font-size: 16px;
+    line-height: 1.6;
+    transition: color 0.4s ease;
+}
+
+/* Estilização Base das Imagens Laterais */
+.planta-card2 {
+    width: 140px;
+    height: auto;
+    object-fit: contain;
+    opacity: 0.5; /* Opacidade sutil para integrar ao fundo */
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), 
+                rotate 0.5s cubic-bezier(0.25, 1, 0.5, 1), 
+                opacity 0.4s ease;
+}
+
+/* Rotações iniciais orgânicas (uma para cada lado) */
+.planta-esquerda {
+    rotate: -10deg;
+}
+
+.planta-direita {
+    rotate: 10deg;
+}
+
+/* ========================================================
+   ✨ ESTADOS ATIVOS (QUANDO A CLASSE .ATIVO FOR INJETADA)
+   ======================================================== */
+
+#card2.ativo {
+    background-color: #E2DDD1; /* Escurece o fundo de forma bem sutil */
+}
+
+/* Em vez de dar scale no h2 e no p separados, movemos o bloco de texto levemente para frente */
+#card2.ativo .card2-text {
+    transform: scale(1.01);
+}
+
+#card2.ativo .card2-text h2 {
+    color: #274f3f; /* Tom de verde mais vivo ao ativar */
+}
+
+/* Animação fluida das plantas voltando à posição e ganhando destaque */
+#card2.ativo .planta-card2 {
+    opacity: 0.85;
+    rotate: 0deg;
+    transform: scale(1.08);
+}
+
+/* Container Principal (Mantido como você estruturou originalmente) */
+.card3 {
+    background-color: #F9F8F3; /* Tom creme claro que combina com os blocos superiores do seu site */
+    padding: 60px 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Cria um espaçamento consistente entre os blocos internos */
+}
+
+/* Título e introdução do topo do bloco */
+.card3 h2 {
+    color: var(--verde-escuro);
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.card3-intro {
+    color: #555;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+}
+
+/* Blocos de Conteúdo dos Biomas (Estilizados como Cards Flutuantes Premium) */
+.card3-content {
+    display: flex;
+    background-color: #FFFFFF; /* Fundo branco para destacar os biomas */
+    border-radius: 30px; /* Bordas arredondadas idênticas ao restante do seu layout */
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04); /* Sombra suave para profundidade */
+    border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+/* Ajuste da Imagem dentro do bloco */
+.card3-img {
+    flex: 1;
+    min-width: 40%;
+    max-width: 45%;
+}
+
+.card3-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Impede a imagem de distorcer ou esticar */
+}
+
+/* Container de textos e tags do Bioma */
+.card3-info {
+    flex: 1.2;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card3-info h3 {
+    color: var(--verde-escuro);
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+    text-align: left; /* Alinhamento corrigido para leitura em blocos de duas colunas */
+}
+
+.bioma-desc {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+}
+
+/* Grid Interno para Listar as Plantas */
+.plantas-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.planta-item {
+    background-color: #F5F7F4; /* Fundo sutil verde/cinza */
+    padding: 20px;
+    border-radius: 16px;
+    border-left: 4px solid var(--verde-escuro); /* Detalhe com a cor de destaque do seu site */
+}
+
+.planta-item h4 {
+    color: #222;
+    font-size: 1.05rem;
+    margin-bottom: 6px;
+}
+
+.planta-item h4 span {
+    color: #777;
+    font-style: italic;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.planta-item p {
+    color: #555;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* ========================================================
+   🌿 RESPONSIVIDADE DA PÁGINA INICIAL (MEDIA QUERIES)
+   ======================================================== */
+
+/* Telas Médias e Tablets Horizontais (até 1024px) */
+@media (max-width: 1024px) {
+    .hero-container {
+        padding: 48px 6%;
+        gap: 36px;
+    }
+
+    .hero-text h1 {
+        font-size: 38px;
+    }
+
+    .img-hero {
+        width: 400px;
+        height: 340px;
+    }
+
+    #intro {
+        padding: 0 24px;
+        gap: 28px;
+    }
+
+    .img-card1 {
+        width: 240px;
+        padding: 24px 18px;
+    }
+
+    .card2-container {
+        padding: 0 4%;
+    }
+
+    .card3 {
+        padding: 50px 4%;
+    }
+
+    .card3-info {
+        padding: 32px;
+    }
+}
+
+/* Tablets Verticais (até 860px) */
+@media (max-width: 860px) {
+    /* Hero Section */
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 28px;
+        gap: 32px;
+    }
+
+    .hero-text {
+        max-width: 100%;
+        align-items: center;
+    }
+
+    .hero-text a {
+        align-self: center;
+    }
+
+    .img-hero {
+        width: 100%;
+        max-width: 440px;
+        height: 320px;
+    }
+
+    /* Barra de Benefícios (2x2 no tablet) */
+    .beneficios-bar {
+        flex-wrap: wrap;
+        margin: 36px 4%;
+    }
+
+    .content-item {
+        flex: 1 1 calc(50% - 10px);
+    }
+
+    /* Seção Intro ("O que são Fitoterápicos?") */
+    #intro {
+        flex-direction: column;
+        text-align: center;
+        margin: 48px auto;
+    }
+
+    #card1 {
+        max-width: 600px;
+    }
+
+    #card1 h2,
+    #card1 p {
+        text-align: center;
+    }
+
+    .produtos-intro-container {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .img-card1 {
+        flex: 1 1 260px;
+        max-width: 320px;
+    }
+
+    /* Card 2 (Banner Areia com Plantas Laterais) */
+    #card2 {
+        padding: 32px 24px;
+    }
+
+    .card2-text {
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    .planta-card2 {
+        width: 90px;
+    }
+
+    /* Card 3 (Biomas Brasileiros) */
+    .card3-content {
+        flex-direction: column;
+        border-radius: 24px;
+    }
+
+    .card3-img {
+        min-width: 100%;
+        max-width: 100%;
+        height: 280px;
+    }
+
+    .card3-info {
+        padding: 28px 24px;
+    }
+}
+
+/* Celulares e Telas Pequenas (até 580px) */
+@media (max-width: 580px) {
+        .hero-section {
+        padding: 12px 16px;
+    }
+
+    .hero-container {
+        padding: 36px 24px;
+        border-radius: 26px;
+        gap: 28px;
+    }
+
+    /* Sobe a imagem para o topo e mantém uma proporção orgânica equilibrada */
+    .img-hero {
+        order: -1;
+        width: 240px;
+        height: 220px;
+        border-radius: 55% 45% 50% 50% / 50% 50% 50% 50%;
+    }
+
+    .hero-subtitle {
+        font-size: 11px;
+        letter-spacing: 1.8px;
+        margin-bottom: 8px;
+    }
+
+    .hero-text h1 {
+        font-size: 30px;
+        line-height: 1.2;
+        margin-bottom: 12px;
+    }
+
+    .hero-desc {
+        font-size: 14.5px;
+        line-height: 1.55;
+        margin-bottom: 24px;
+    }
+
+    .hero-text a {
+        width: 100%;
+        text-align: center;
+        padding: 14px 24px;
+    }
+
+
+    /* Barra de Benefícios (1 coluna no celular) */
+    .beneficios-bar {
+        flex-direction: column;
+        margin: 28px 16px;
+        padding: 8px;
+        border-radius: 20px;
+    }
+
+    .content-item {
+        padding: 18px 14px;
+    }
+
+    /* Seção Intro */
+    #intro {
+        padding: 0 16px;
+        margin: 36px auto;
+    }
+
+    #card1 h2 {
+        font-size: 26px;
+    }
+
+    #card1 p {
+        font-size: 14.5px;
+    }
+
+    .produtos-intro-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .img-card1 {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Card 2: Esconde as ilustrações laterais para o texto respirar */
+    .card2-container {
+        padding: 0 16px;
+        margin: 36px 0;
+    }
+
+    #card2 {
+        padding: 28px 20px;
+        border-radius: 22px;
+    }
+
+    .planta-card2 {
+        display: none;
+    }
+
+    .card2-text {
+        padding: 0;
+    }
+
+    .card2-text h2 {
+        font-size: 22px;
+    }
+
+    .card2-text p {
+        font-size: 14.5px;
+    }
+
+    /* Card 3 (Biomas) */
+    .card3 {
+        padding: 40px 16px;
+        gap: 28px;
+    }
+
+    .card3 h2 {
+        font-size: 1.7rem;
+    }
+
+    .card3-intro {
+        font-size: 0.95rem;
+    }
+
+    .card3-img {
+        height: 220px;
+    }
+
+    .card3-info {
+        padding: 22px 18px;
+    }
+
+    .card3-info h3 {
+        font-size: 1.35rem;
+    }
+
+    .planta-item {
+        padding: 16px;
+    }
+}
