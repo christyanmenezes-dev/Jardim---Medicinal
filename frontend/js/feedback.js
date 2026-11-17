@@ -1,3 +1,4 @@
+const API_URL = "https://jardim-medicinal-api.onrender.com";
 const nome = document.getElementById("nome");
 const avaliacao = document.getElementById("avaliacao");
 const mensagem = document.getElementById("mensagem-feedback");
@@ -18,7 +19,7 @@ formulario.addEventListener("submit", function (e) {
         nota: Number(notaSelecionada.value)
     };
     
-    fetch("http://localhost:8080/feedback", {
+    fetch(`${API_URL}/feedback`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -66,7 +67,7 @@ function carregarFeedbacks() {
 
     container.querySelectorAll(".feedback-card:not(.modelo)").forEach(card => card.remove());
 
-    fetch("http://localhost:8080/feedback")
+    fetch(`${API_URL}/feedback`)
     .then(resposta => {
         if (!resposta.ok) {
             throw new Error("Erro: " + resposta.status)

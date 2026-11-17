@@ -1,3 +1,4 @@
+const API_URL = "https://jardim-medicinal-api.onrender.com";
 const forumArea = document.querySelector(".forum-area");
 const botao = document.querySelector(".btn-submit");
 const mensagem = document.querySelector(".mensagem");
@@ -6,7 +7,7 @@ async function carregarPerguntas() {
 
     try {
 
-        const resposta = await fetch('http://localhost:8080/comentarios');
+        const resposta = await fetch(`${API_URL}/comentarios`);
 
         if (!resposta.ok) {
             throw new Error('Erro: ' + resposta.status);
@@ -61,7 +62,7 @@ async function enviarPergunta(evento) {
             comentario: comentario
         };
 
-        const resposta = await fetch("http://localhost:8080/comentarios", {
+        const resposta = await fetch(`${API_URL}/comentarios`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -144,7 +145,7 @@ forumArea.addEventListener("submit", async function(evento) {
     try {
         botao.disabled = true;
 
-        const resposta = await fetch("http://localhost:8080/respostas", {
+        const resposta = await fetch(`${API_URL}/respostas`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -183,7 +184,7 @@ forumArea.addEventListener("submit", async function(evento) {
 async function carregarRespostas() {
 
     try {
-        const resposta = await fetch("http://localhost:8080/respostas");
+        const resposta = await fetch(`${API_URL}/respostas`);
 
         if (!resposta.ok) {
             const erro = await resposta.json();
